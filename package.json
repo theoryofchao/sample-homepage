@@ -4,8 +4,8 @@
   "private": true,
   "scripts": {
     "start": "nodemon ./bin/www",
-    "build-css": "./node_modules/.bin/node-sass ./public/styles/scss -o ./public/styles/css",
-    "watch-css": "./node_modules/.bin/node-sass -w ./public/styles/scss -o ./public/styles/css"
+    "build-css": "./node_modules/.bin/node-sass ./public/stylesheets/scss -o ./public/stylesheets",
+    "watch-css": "./node_modules/.bin/node-sass -w ./public/stylesheets/scss -o ./public/stylesheets"
   },
   "dependencies": {
     "body-parser": "~1.16.0",
