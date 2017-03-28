@@ -10,11 +10,11 @@ router.get('/', function(req, res, next) {
 
 /* GET resume. */
 router.get('/resume', (req, res, next) => {
-  let tmpFile = "./public/pdf/RogerChaoResume.pdf";
-  fs.readFile(tmpFile, (err, data) => {
-    res.contentType("application/pdf");
-    res.send(data);
-  });
+  let stream = fs.createReadStream("./public/pdf/RogerChaoResume.pdf");
+  let filename = "RogerChaoResume.pdf";
+  res.setHeader('Content-disposition', 'inline; filename="' + filename + '"');
+  res.setHeader('Content-type', 'application/pdf');
+  stream.pipe(res);
 });
 
 module.exports = router;
